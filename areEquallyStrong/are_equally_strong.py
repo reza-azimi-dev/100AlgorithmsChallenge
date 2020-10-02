@@ -18,4 +18,3 @@ def are_eqally_strong(myLeft,myRight,yourLeft,yourRight):
 print(are_eqally_strong(10, 15, 15, 10))
 print(are_eqally_strong(15, 10, 15, 10))
 print(are_eqally_strong(15, 10, 15, 9))
-
