@@ -12,16 +12,21 @@ def array_maximal_adjacent_difference(array):
         elif i != 0 and i != (len(array)-1):
             dif_from_left = check_adjacent_abs_dif(array[i],array[i-1])
             dif_from_right = check_adjacent_abs_dif(array[i],array[i+1])
-
-            if dif_from_left > dif_from_right and dif_from_left > dif:
-                dif = dif_from_left
-            else:
-                if dif_from_right > dif:
-                    dif = dif_from_right
+            dif = left_or_right(dif_from_left,dif_from_right,dif)  
     return dif
+
 
 def check_adjacent_abs_dif(left,right):
     check_dif = left - right
     return abs(check_dif)
 
-print(array_maximal_adjacent_difference([2,4,1,0,4,6,1,4,13,2,5,5,2,8]))
+
+def left_or_right(dif_from_left,dif_from_right,dif):
+    if dif_from_left > dif_from_right and dif_from_left > dif:
+        dif = dif_from_left
+    else:
+        if dif_from_right > dif:
+            dif = dif_from_right
+    return dif
+
+print(array_maximal_adjacent_difference([2,4,1,0,4,6,1,4,13,70,2,5,5,2,8,20]))
